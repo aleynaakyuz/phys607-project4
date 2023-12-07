@@ -10,11 +10,6 @@ f = h5py.File('./data.hdf', 'r')
 
 print(f.keys())
 
-#f['data']
-#f['data'].keys()
-#xpos = f['data']['xpos'][:]
-#ypos = f['data/ypos'][:]
-
 
 print(f['data'].keys())
 
