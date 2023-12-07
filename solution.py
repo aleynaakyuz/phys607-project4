@@ -19,12 +19,13 @@ y = f['data/ypos'][:]
 def func1(x, a, b, c, h, e):
     return a*np.sin(b*x) + h*np.cos(c*x) + e
 
-params, cov = curve_fit(func1, x, y)
+params, cov = curve_fit(func1, x, y, p0=(2.5, 3.5, 10.25, 1.02, 5))
 a, b, c, h, e = params[0], params[1], params[2], params[3], params[4]
 yfit1 = a*np.sin(b*x) + h*np.cos(c*x) + e
 
 errs = (np.diag(cov))**2
 print(errs)
+print(params)
 plt.plot(x, y, 'bo', label="y-original")
 plt.scatter(x, yfit1, label="y=a*np.sin(b*x) + h*np.cos(c*x) + e")
 plt.xlabel('x')
